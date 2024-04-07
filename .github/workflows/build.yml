@@ -13,11 +13,3 @@ jobs:
       type: static
       config: debug
       ffmpegRef: release/5.1
-
-  ffmpeg-static-release:
-    uses: ./.github/workflows/ffmpeg.yml
-    with:
-      system: windows-2022
-      type: static
-      config: release
-      ffmpegRef: release/5.1
