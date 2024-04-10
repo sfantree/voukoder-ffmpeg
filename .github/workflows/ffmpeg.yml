@@ -120,5 +120,7 @@ jobs:
     - name: Publish FFmpeg artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: FFmpeg ${{ inputs.system }} ${{ inputs.config }}${{ inputs.config }} package build
-        path: dist/ffmpeg-win64-${{ inputs.type }}-${{ inputs.config }}.tar.gz
+        name: FFmpegBuild
+        path: |
+          dist/ffmpeg-win64-${{ inputs.type }}-${{ inputs.config }}.tar.gz
+          build/bin
