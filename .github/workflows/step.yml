@@ -8,19 +8,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Enable step debugging
-        run: echo "::set-env name=ACTIONS_STEP_DEBUG::true"
-
       - name: Checkout code
         uses: actions/checkout@v4
+        env:
+          ACTIONS_STEP_DEBUG: true
         with:
           repository: github/docs
 
       - name: Set up Go
+        env:
+          ACTIONS_STEP_DEBUG: true
         uses: actions/setup-go@v5
         with:
           go-version: '1.16'
 
       - uses: actions/setup-python@v5
+        env:
+          ACTIONS_STEP_DEBUG: true
         with:
           python-version: '3.10' 
